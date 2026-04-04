@@ -1,9 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ScrollReveal from "../components/ScrollReveal";
 import styles from "./index.module.scss";
 ---
 
 <BaseLayout>
+  <ScrollReveal client:load />
+
   <main class={styles.pageShell}>
     <!-- Seções da landing serão adicionadas em commits incrementais -->
   </main>
