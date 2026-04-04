@@ -1,0 +1,192 @@
+@use "../../../styles/shared/mixins" as *;
+
+.stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.06fr 0.9fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  perspective: 1400px;
+}
+
+.card {
+  @include glassCard;
+  position: relative;
+  overflow: hidden;
+  border-radius: calc(var(--radius) + 4px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)),
+    rgba(12, 12, 13, 0.72);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition:
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease;
+}
+
+.card[data-interacting="true"] {
+  border-color: rgba(255, 179, 109, 0.26);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 179, 109, 0.08);
+}
+
+.cardTall {
+  margin-top: 1rem;
+}
+
+.cardOffset {
+  margin-top: 4.25rem;
+}
+
+.cardWide {
+  margin-top: 2.2rem;
+}
+
+.mediaFrame {
+  position: relative;
+  padding: 1rem 1rem 0;
+  transform: translateZ(34px);
+}
+
+.media {
+  aspect-ratio: 1 / 1.08;
+  overflow: hidden;
+  border-radius: 1.35rem;
+  will-change: transform;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.02);
+  }
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 106, 0, 0.24), transparent 70%);
+  opacity: 0.5;
+  filter: blur(18px);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.indexTag {
+  position: absolute;
+  top: 1.85rem;
+  right: 1.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.8rem;
+  height: 2.8rem;
+  padding: 0 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 10, 10, 0.72);
+  color: #ffd5b5;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  will-change: transform;
+}
+
+.content {
+  position: relative;
+  padding: 1.35rem 1.35rem 1.45rem;
+  transform: translateZ(28px);
+}
+
+.content::before {
+  content: "“";
+  position: absolute;
+  top: 0.85rem;
+  right: 1.05rem;
+  color: rgba(255, 179, 109, 0.18);
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: 4.75rem;
+  line-height: 1;
+}
+
+.result {
+  display: inline-flex;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: #ffc493;
+  font-weight: 700;
+  transition:
+    transform 220ms ease,
+    background 220ms ease,
+    color 220ms ease;
+}
+
+.quote {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  min-height: 6.5rem;
+  color: #e8ddd0;
+  line-height: 1.7;
+  transition: color 220ms ease;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 1.35rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  strong {
+    color: #fff4eb;
+  }
+
+  span {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+}
+
+.card[data-interacting="true"] .result {
+  transform: translateY(-2px);
+  background: rgba(255, 106, 0, 0.24);
+  color: #ffe3cc;
+}
+
+.card[data-interacting="true"] .quote {
+  color: #fff1e3;
+}
+
+@media (max-width: 960px) {
+  .stage {
+    grid-template-columns: 1fr;
+  }
+
+  .cardTall,
+  .cardOffset,
+  .cardWide {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: 1.2rem;
+  }
+
+  .quote {
+    min-height: 0;
+  }
+}
