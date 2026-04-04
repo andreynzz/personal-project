@@ -1,0 +1,75 @@
+@mixin container {
+  width: var(--container);
+  margin: 0 auto;
+}
+
+@mixin section($padding-top: 6rem, $padding-bottom: 6rem) {
+  padding: $padding-top 0 $padding-bottom;
+}
+
+@mixin eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: #ffd1b2;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  &::before {
+    content: "";
+    width: 2.5rem;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.4);
+  }
+}
+
+@mixin sectionHeading {
+  max-width: 46rem;
+  margin-bottom: 2.5rem;
+
+  h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.05;
+  }
+}
+
+@mixin glassCard {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+@mixin buttonBase {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem;
+  padding: 0 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@mixin buttonPrimary {
+  background: linear-gradient(135deg, #ff7a1f, var(--accent));
+  color: #111;
+  box-shadow: 0 16px 40px rgba(255, 106, 0, 0.28);
+}
+
+@mixin buttonGhost {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
