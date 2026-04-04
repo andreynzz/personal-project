@@ -2,16 +2,36 @@
 
 .section {
   @include section;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 106, 0, 0.09), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.01));
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .container {
   @include container;
+  position: relative;
+}
+
+.stageWord {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  color: rgba(255, 255, 255, 0.03);
+  font-family: "Bebas Neue", "Space Grotesk", sans-serif;
+  font-size: clamp(7rem, 18vw, 14rem);
+  line-height: 0.82;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  pointer-events: none;
 }
 
 .heading {
   max-width: 52rem;
   margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
 
   h2 {
     margin: 0;
@@ -21,6 +41,13 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
   }
+}
+
+.lead {
+  max-width: 37rem;
+  margin: 1.2rem 0 0;
+  color: rgba(240, 234, 224, 0.6);
+  line-height: 1.9;
 }
 
 .metaLine {
@@ -47,50 +74,127 @@
   text-transform: uppercase;
 }
 
-.grid {
+.dossier {
+  position: relative;
+  z-index: 1;
   display: grid;
-  gap: 1px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  background: rgba(255, 255, 255, 0.08);
+  gap: 1rem;
 }
 
 .card {
-  background: #0c0b09;
-  min-height: 16rem;
-  padding: 1.6rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr) 16rem;
+  gap: 1.4rem;
+  align-items: stretch;
+  min-height: 15.5rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
+    rgba(12, 11, 9, 0.96);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), transparent 22%);
+    pointer-events: none;
+  }
+}
+
+.card1 {
+  margin-left: 0;
+}
+
+.card2 {
+  margin-left: 3rem;
+}
+
+.card3 {
+  margin-left: 6rem;
+}
+
+.cardTop {
+  display: grid;
+  align-content: space-between;
+  padding-right: 1rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.index {
+  display: inline-flex;
+  color: rgba(255, 106, 0, 0.92);
+  font-family: "Bebas Neue", "Space Grotesk", sans-serif;
+  font-size: clamp(4rem, 8vw, 6rem);
+  line-height: 0.82;
+  letter-spacing: 0.04em;
+}
+
+.meta {
+  display: grid;
+  gap: 0.25rem;
+
+  span {
+    color: rgba(240, 234, 224, 0.36);
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    color: #fff2e3;
+    font-family: "Bebas Neue", "Space Grotesk", sans-serif;
+    font-size: 2.2rem;
+    line-height: 0.9;
+    letter-spacing: 0.03em;
+  }
+}
+
+.content {
+  display: grid;
+  align-content: start;
 
   h3 {
+    max-width: 20rem;
     margin: 0;
     font-family: "Bebas Neue", "Space Grotesk", sans-serif;
-    font-size: 2rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     line-height: 0.95;
     letter-spacing: 0.03em;
     text-transform: uppercase;
   }
 
   p {
+    max-width: 28rem;
     margin: 1rem 0 0;
-    color: var(--muted);
-    line-height: 1.75;
-  }
-
-  strong {
-    display: block;
-    margin-top: 1rem;
-    color: #ffe0c5;
-    font-size: 0.82rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    color: rgba(240, 234, 224, 0.6);
+    line-height: 1.8;
   }
 }
 
-.index {
-  display: inline-flex;
-  margin-bottom: 0.8rem;
-  color: var(--accent);
-  font-family: "Bebas Neue", "Space Grotesk", sans-serif;
-  font-size: 1.3rem;
-  letter-spacing: 0.08em;
+.cardBottom {
+  display: grid;
+  align-content: space-between;
+  gap: 1rem;
+  padding-left: 1.2rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+
+  strong {
+    color: #ffe0c5;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  span {
+    color: rgba(240, 234, 224, 0.34);
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
 }
 
 @media (max-width: 960px) {
@@ -98,13 +202,32 @@
     @include section(4.5rem, 4.5rem);
   }
 
-  .grid {
+  .stageWord {
+    top: 4rem;
+    font-size: clamp(5rem, 20vw, 9rem);
+  }
+
+  .card,
+  .card1,
+  .card2,
+  .card3 {
     grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+
+  .cardTop,
+  .cardBottom {
+    padding: 0;
+    border: 0;
+  }
+
+  .cardTop {
+    gap: 1rem;
   }
 }
 
 @media (max-width: 640px) {
   .card {
-    padding: 1.2rem;
+    padding: 1rem;
   }
 }
