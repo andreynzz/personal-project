@@ -1,0 +1,28 @@
+---
+import { testimonials } from "../../data/testimonials";
+import styles from "./TestimonialsSection.module.scss";
+---
+
+<section class={styles.section}>
+  <div class={styles.container}>
+    <div class:list={[styles.heading, "reveal"]}>
+      <span class={styles.eyebrow}>Depoimentos</span>
+      <h2>Resultados que começaram com uma decisão simples: parar de tentar sozinho.</h2>
+    </div>
+
+    <div class={styles.grid}>
+      {testimonials.map((testimonial) => (
+        <article class:list={[styles.card, "reveal"]}>
+          <div class={styles.media}>
+            <img src={testimonial.image} alt={`Foto de ${testimonial.name}`} loading="lazy" />
+          </div>
+          <div class={styles.content}>
+            <span class={styles.result}>{testimonial.result}</span>
+            <p>{testimonial.text}</p>
+            <strong>{testimonial.name}</strong>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import { services } from "../../data/services";
+import styles from "./ServicesSection.module.scss";
+---
+
+<section class={styles.section}>
+  <div class={styles.container}>
+    <div class:list={[styles.heading, "reveal"]}>
+      <span class={styles.eyebrow}>Serviços</span>
+      <h2>Formato certo para sua rotina e para o resultado que você quer construir.</h2>
+    </div>
+
+    <div class={styles.grid}>
+      {services.map((service) => (
+        <article class:list={[styles.card, "reveal"]}>
+          <h3>{service.title}</h3>
+          <p>{service.text}</p>
+          <strong>{service.highlight}</strong>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
