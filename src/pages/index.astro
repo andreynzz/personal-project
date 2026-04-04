@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ScrollReveal from "../components/ScrollReveal";
+import AboutSection from "../components/sections/AboutSection.astro";
+import FinalCtaSection from "../components/sections/FinalCtaSection.astro";
 import HeroSection from "../components/sections/HeroSection.astro";
 import ProblemSection from "../components/sections/ProblemSection.astro";
 import ServicesSection from "../components/sections/ServicesSection.astro";
@@ -20,5 +22,7 @@ const whatsappLink = "https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20com
     <SolutionSection />
     <ServicesSection />
     <TestimonialsSection />
+    <AboutSection />
+    <FinalCtaSection whatsappLink={whatsappLink} />
   </main>
 </BaseLayout>

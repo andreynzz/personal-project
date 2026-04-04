@@ -1,0 +1,36 @@
+---
+import styles from "./AboutSection.module.scss";
+---
+
+<section class={styles.section}>
+  <div class={styles.container}>
+    <div class="reveal">
+      <div class={styles.photo}>
+        <img
+          src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=900&q=80"
+          alt="Lucas Forte em treino funcional"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <div class:list={[styles.content, "reveal"]}>
+      <span class={styles.eyebrow}>Sobre</span>
+      <h2>Treino com energia alta, método claro e atenção individual.</h2>
+      <p>
+        Lucas Forte é personal trainer especializado em emagrecimento e hipertrofia,
+        com atendimento presencial e online para quem quer resultado com constância.
+      </p>
+      <p>
+        A proposta é unir intensidade, estratégia e rotina sustentável para transformar
+        treino em hábito e hábito em resultado.
+      </p>
+
+      <div class={styles.credentials}>
+        <span>CREF 00/000000-G/SP</span>
+        <span>Especialização fictícia em treinamento funcional e composição corporal</span>
+        <span>Atendimento para iniciantes, intermediários e retorno pós-pausa</span>
+      </div>
+    </div>
+  </div>
+</section>
