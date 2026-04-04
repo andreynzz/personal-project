@@ -1,0 +1,51 @@
+---
+import HeroBadge from "../HeroBadge";
+import styles from "./HeroSection.module.scss";
+
+interface Props {
+  whatsappLink: string;
+}
+
+const { whatsappLink } = Astro.props;
+---
+
+<section class={styles.section}>
+  <div class={styles.container}>
+    <div class:list={[styles.content, "reveal"]}>
+      <span class={styles.eyebrow}>Lucas Forte Personal</span>
+      <h1>Seu corpo responde diferente quando o treino tem direção.</h1>
+      <p class={styles.lead}>
+        Personal trainer presencial e online para adultos de 25 a 40 anos que querem
+        emagrecer, ganhar massa e finalmente manter resultado.
+      </p>
+
+      <div class={styles.actions}>
+        <a class:list={[styles.button, styles.buttonPrimary]} href={whatsappLink} target="_blank" rel="noreferrer">
+          Quero começar agora
+        </a>
+        <a class:list={[styles.button, styles.buttonGhost]} href="#contato">Agendar avaliação</a>
+      </div>
+
+      <HeroBadge client:visible />
+    </div>
+
+    <div class:list={[styles.visual, "reveal"]}>
+      <div class={styles.photoCard}>
+        <img
+          src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80"
+          alt="Personal trainer em pose de treino"
+          loading="eager"
+        />
+        <div class={styles.overlay}></div>
+        <div class:list={[styles.stat, styles.statPrimary]}>
+          <strong>+120</strong>
+          <span>alunos acompanhados</span>
+        </div>
+        <div class:list={[styles.stat, styles.statSecondary]}>
+          <strong>12 semanas</strong>
+          <span>para uma mudança visível</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

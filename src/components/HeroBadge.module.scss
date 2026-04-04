@@ -1,0 +1,39 @@
+@use "../styles/shared/mixins" as *;
+
+.root {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 2rem;
+  max-width: 34rem;
+}
+
+.card {
+  @include glassCard;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.1rem;
+  border-radius: 22px;
+
+  strong {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--muted);
+  }
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: #ffb073;
+}

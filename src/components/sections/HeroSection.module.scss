@@ -1,0 +1,161 @@
+@use "../../styles/shared/mixins" as *;
+
+.section {
+  position: relative;
+  padding: 2rem 0 5rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent 92%);
+    pointer-events: none;
+  }
+}
+
+.container {
+  @include container;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 2rem;
+  align-items: center;
+  min-height: calc(100vh - 4rem);
+}
+
+.content {
+  h1 {
+    margin: 0;
+    max-width: 12ch;
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    font-size: clamp(3.3rem, 8vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+  }
+}
+
+.eyebrow {
+  @include eyebrow;
+}
+
+.lead {
+  max-width: 36rem;
+  margin: 1.5rem 0 0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button {
+  @include buttonBase;
+}
+
+.buttonPrimary {
+  @include buttonPrimary;
+}
+
+.buttonGhost {
+  @include buttonGhost;
+}
+
+.visual {
+  position: relative;
+}
+
+.photoCard {
+  position: relative;
+  min-height: 44rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: var(--shadow);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.08);
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.6)),
+    linear-gradient(135deg, rgba(255, 106, 0, 0.4), transparent 40%);
+}
+
+.stat {
+  position: absolute;
+  padding: 1rem 1.1rem;
+  border-radius: 22px;
+  background: rgba(10, 10, 10, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
+
+  strong {
+    display: block;
+    font-size: 1.4rem;
+  }
+
+  span {
+    color: #dfd6ca;
+  }
+}
+
+.statPrimary {
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.statSecondary {
+  left: 1.5rem;
+  bottom: 1.5rem;
+}
+
+@media (max-width: 960px) {
+  .section {
+    padding-top: 1rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .photoCard {
+    min-height: 28rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .content h1 {
+    max-width: none;
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .stat {
+    max-width: calc(100% - 3rem);
+  }
+}

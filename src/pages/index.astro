@@ -1,13 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ScrollReveal from "../components/ScrollReveal";
+import HeroSection from "../components/sections/HeroSection.astro";
 import styles from "./index.module.scss";
+
+const whatsappLink = "https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20meu%20treino%20com%20o%20Lucas%20Forte.";
 ---
 
 <BaseLayout>
   <ScrollReveal client:load />
 
   <main class={styles.pageShell}>
-    <!-- Seções da landing serão adicionadas em commits incrementais -->
+    <HeroSection whatsappLink={whatsappLink} />
   </main>
 </BaseLayout>
