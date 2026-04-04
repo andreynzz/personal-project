@@ -5,26 +5,67 @@ import styles from "./SolutionSection.module.scss";
 
 <section class={styles.section}>
   <div class={styles.container}>
+    <div class={styles.stageWord} aria-hidden="true">método</div>
+
     <div class:list={[styles.intro, "reveal"]}>
       <div class={styles.metaLine}>
         <span class={styles.metaBadge}>Seção 03</span>
         <span class={styles.metaDate}>A solução</span>
       </div>
-      <h2>Método simples, acompanhamento próximo e execução com intensidade.</h2>
-      <p>
-        O trabalho do Lucas combina treino inteligente, progressão real e suporte
-        contínuo para resolver as dores que travam a maioria das pessoas.
+      <h2>Um método desenhado como sistema, não como improviso.</h2>
+      <p class={styles.lead}>
+        O Lucas organiza treino, ajustes e suporte como partes do mesmo mecanismo.
+        Quando tudo conversa entre si, o resultado deixa de depender de motivação aleatória.
       </p>
+      <div class={styles.manifesto}>
+        <span>Estrutura clara</span>
+        <span>Leitura constante</span>
+        <span>Resposta rápida</span>
+      </div>
     </div>
 
-    <div class={styles.list}>
+    <div class:list={[styles.atlas, "reveal"]}>
+      <div class={styles.ringOuter} aria-hidden="true"></div>
+      <div class={styles.ringInner} aria-hidden="true"></div>
+      <div class={styles.axisVertical} aria-hidden="true"></div>
+      <div class={styles.axisHorizontal} aria-hidden="true"></div>
+
+      <div class={styles.core}>
+        <span class={styles.corePulse} aria-hidden="true"></span>
+        <span class={styles.coreKicker}>Lucas Forte Method</span>
+        <h3>Estratégia, progresso e constância trabalhando no mesmo centro.</h3>
+        <p>
+          Cada camada resolve um tipo de atrito e alimenta a próxima, para o plano continuar
+          funcionando mesmo quando a rotina aperta.
+        </p>
+      </div>
+
       {solutions.map((item, index) => (
-        <article class:list={[styles.card, "reveal"]}>
-          <span class={styles.index}>0{index + 1}</span>
-          <h3>{item.title}</h3>
-          <p>{item.text}</p>
+        <article class:list={[styles.node, styles[`node${index + 1}`]]}>
+          <span class={styles.connector} aria-hidden="true"></span>
+          <div class={styles.nodeShell}>
+            <div class={styles.nodeTop}>
+              <span class={styles.nodeIndex}>0{index + 1}</span>
+              <div class={styles.nodeMeta}>
+                <span>{item.label}</span>
+                <strong>{item.metric}</strong>
+              </div>
+            </div>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+            <div class={styles.nodeFooter}>
+              <span>{item.signal}</span>
+              <em>camada conectada ao núcleo</em>
+            </div>
+          </div>
         </article>
       ))}
+
+      <div class={styles.footerNote}>
+        <strong>Menos atrito. Mais direção.</strong>
+        <span>presencial e online para adultos de 25 a 40 anos</span>
+        <p>emagrecimento e hipertrofia com leitura contínua da sua rotina</p>
+      </div>
     </div>
   </div>
 </section>
