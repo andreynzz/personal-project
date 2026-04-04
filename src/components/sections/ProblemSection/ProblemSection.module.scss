@@ -7,11 +7,33 @@
 
 .container {
   @include container;
+  position: relative;
+}
+
+.stageWord {
+  position: absolute;
+  top: 4.5rem;
+  right: 0;
+  color: rgba(255, 255, 255, 0.03);
+  font-family: "Bebas Neue", "Space Grotesk", sans-serif;
+  font-size: clamp(8rem, 22vw, 18rem);
+  line-height: 0.8;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 2rem;
+  align-items: start;
 }
 
 .heading {
   max-width: 52rem;
-  margin-bottom: 2.5rem;
+  padding-top: 1rem;
 
   h2 {
     margin: 0;
@@ -19,6 +41,30 @@
     font-size: clamp(3rem, 6vw, 4.6rem);
     line-height: 0.95;
     letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+}
+
+.lead {
+  max-width: 29rem;
+  margin: 1.3rem 0 0;
+  color: rgba(240, 234, 224, 0.62);
+  line-height: 1.9;
+}
+
+.sideNote {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 2rem;
+
+  span {
+    display: inline-flex;
+    width: fit-content;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(240, 234, 224, 0.42);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
   }
 }
@@ -47,55 +93,20 @@
   text-transform: uppercase;
 }
 
-.grid {
-  display: grid;
-  gap: 1px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.card {
-  padding: 1.6rem;
-  background: #0c0b09;
-
-  h3 {
-    margin: 0;
-    font-family: "Bebas Neue", "Space Grotesk", sans-serif;
-    font-size: 2rem;
-    line-height: 0.95;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-  }
-
-  p {
-    margin: 1rem 0 0;
-    color: var(--muted);
-    line-height: 1.75;
-  }
-}
-
-.number {
-  display: inline-flex;
-  margin-bottom: 1rem;
-  color: var(--accent);
-  font-family: "Bebas Neue", "Space Grotesk", sans-serif;
-  font-size: 1.3rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
 @media (max-width: 960px) {
   .section {
     @include section(4.5rem, 4.5rem);
   }
 
-  .grid {
+  .stageWord {
+    top: 6rem;
+    font-size: clamp(6rem, 26vw, 10rem);
+  }
+
+  .layout {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 640px) {
-  .card {
-    padding: 1.2rem;
-  }
 }

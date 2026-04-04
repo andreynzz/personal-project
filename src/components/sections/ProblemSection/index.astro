@@ -1,26 +1,31 @@
 ---
-import { pains } from "../../../data/pains";
+import ProblemStack from "../../ui/ProblemStack/index";
 import styles from "./ProblemSection.module.scss";
 ---
 
 <section class={styles.section}>
   <div class={styles.container}>
-    <div class:list={[styles.heading, "reveal"]}>
-      <div class={styles.metaLine}>
-        <span class={styles.metaBadge}>Seção 02</span>
-        <span class={styles.metaDate}>O problema</span>
-      </div>
-      <h2>Se o plano não encaixa na vida real, você desiste antes do resultado.</h2>
-    </div>
+    <div class={styles.stageWord} aria-hidden="true">travou</div>
 
-    <div class={styles.grid}>
-      {pains.map((pain) => (
-        <article class:list={[styles.card, "reveal"]}>
-          <span class={styles.number}>{pain.number}</span>
-          <h3>{pain.title}</h3>
-          <p>{pain.text}</p>
-        </article>
-      ))}
+    <div class={styles.layout}>
+      <div class:list={[styles.heading, "reveal"]}>
+        <div class={styles.metaLine}>
+          <span class={styles.metaBadge}>Seção 02</span>
+          <span class={styles.metaDate}>O problema</span>
+        </div>
+        <h2>Se o plano não encaixa na vida real, você desiste antes do resultado.</h2>
+        <p class={styles.lead}>
+          O problema raramente é falta de esforço. Na maioria das vezes, o que trava
+          sua evolução é um método genérico tentando caber numa rotina que já está no limite.
+        </p>
+        <div class={styles.sideNote}>
+          <span>Rotina cheia</span>
+          <span>Progresso inconsistente</span>
+          <span>Treino sem direção</span>
+        </div>
+      </div>
+
+      <ProblemStack client:visible />
     </div>
   </div>
 </section>
