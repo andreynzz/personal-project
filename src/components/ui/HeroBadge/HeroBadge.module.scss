@@ -2,38 +2,49 @@
 
 .root {
   display: grid;
-  gap: 0.9rem;
-  margin-top: 2rem;
-  max-width: 34rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .card {
-  @include glassCard;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1rem;
-  align-items: center;
-  padding: 1rem 1.1rem;
-  border-radius: 22px;
+  border: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  align-items: flex-start;
+  min-height: 100%;
+  padding: 1rem 0.9rem;
+  border-radius: 0;
+  background: #0c0b09;
 
   strong {
     display: block;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0;
+    color: var(--accent);
+    font-family: "Bebas Neue", "Space Grotesk", sans-serif;
+    font-size: 1.45rem;
+    line-height: 1;
   }
 
   p {
     margin: 0;
-    color: var(--muted);
+    color: rgba(240, 234, 224, 0.35);
+    font-size: 0.65rem;
+    line-height: 1.45;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 }
 
 .icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  color: #ffb073;
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .root {
+    grid-template-columns: 1fr;
+  }
 }

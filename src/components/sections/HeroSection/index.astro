@@ -1,5 +1,4 @@
 ---
-import HeroBadge from "../../ui/HeroBadge/index";
 import styles from "./HeroSection.module.scss";
 
 interface Props {
@@ -7,26 +6,69 @@ interface Props {
 }
 
 const { whatsappLink } = Astro.props;
+
+const heroTickerItems = [
+  "Treinamento personalizado",
+  "Emagrecimento real",
+  "Hipertrofia com método",
+  "Acompanhamento 1:1",
+  "Resultados em 12 semanas",
+  "+120 alunos"
+];
 ---
 
 <section class={styles.section}>
-  <div class={styles.container}>
-    <div class:list={[styles.content, "reveal"]}>
-      <span class={styles.eyebrow}>Lucas Forte Personal</span>
-      <h1>Seu corpo responde diferente quando o treino tem direção.</h1>
-      <p class={styles.lead}>
-        Personal trainer presencial e online para adultos de 25 a 40 anos que querem
-        emagrecer, ganhar massa e finalmente manter resultado.
-      </p>
+  <div class={styles.ticker}>
+    <div class={styles.tickerInner}>
+      {[...heroTickerItems, ...heroTickerItems].map((item) => (
+        <span class={styles.tickerItem}>
+          {item}
+          <span class={styles.tickerSep}>·</span>
+        </span>
+      ))}
+    </div>
+  </div>
 
-      <div class={styles.actions}>
-        <a class:list={[styles.button, styles.buttonPrimary]} href={whatsappLink} target="_blank" rel="noreferrer">
-          Quero começar agora
-        </a>
-        <a class:list={[styles.button, styles.buttonGhost]} href="#contato">Agendar avaliação</a>
+  <div class={styles.wrapper}>
+    <div class={styles.sidebar}>
+      <span class={styles.sidebarLabel}>Lucas Forte Personal</span>
+      <span class={styles.sidebarNum}>01</span>
+    </div>
+
+    <div class={styles.main}>
+      <div class:list={[styles.content, "reveal"]}>
+        <div class={styles.metaLine}>
+          <span class={styles.metaBadge}>Presencial & Online</span>
+          <span class={styles.metaDate}>São Paulo — Performance Training</span>
+        </div>
+
+        <h1 class={styles.headline}>
+          <span class={styles.headlineOutline}>Transforme</span>
+          <span>
+            <span class={styles.headlineHalf}>seu</span>
+            <span class={styles.headlineFill}>físico</span>
+          </span>
+          <span class={styles.headlineAccent}>de vez.</span>
+        </h1>
+
+        <div class={styles.pullQuote}>
+          <p>
+            Personal trainer para adultos de 25 a 40 anos que querem emagrecer,
+            ganhar massa e finalmente manter resultado com estratégia,
+            constância e acompanhamento individual.
+          </p>
+        </div>
+
+        <div class={styles.actions}>
+          <a class:list={[styles.button, styles.buttonPrimary]} href={whatsappLink} target="_blank" rel="noreferrer">
+            Quero começar agora
+          </a>
+          <a class:list={[styles.button, styles.buttonGhost]} href="#contato">Agendar avaliação</a>
+        </div>
+
+        <p class={styles.proof}><span>+120 alunos</span> acompanhados · emagrecimento · hipertrofia</p>
       </div>
 
-      <HeroBadge client:visible />
     </div>
 
     <div class:list={[styles.visual, "reveal"]}>
@@ -37,13 +79,20 @@ const { whatsappLink } = Astro.props;
           loading="eager"
         />
         <div class={styles.overlay}></div>
-        <div class:list={[styles.stat, styles.statPrimary]}>
-          <strong>+120</strong>
-          <span>alunos acompanhados</span>
+        <div class={styles.photoTop}>
+          <div class={styles.tagBox}>
+            <span>Entre em contato</span>
+          </div>
         </div>
-        <div class:list={[styles.stat, styles.statSecondary]}>
-          <strong>12 semanas</strong>
-          <span>para uma mudança visível</span>
+        <div class={styles.statsGrid}>
+          <div class:list={[styles.statCell, styles.statCellAccent]}>
+            <strong>+120</strong>
+            <span>alunos acompanhados</span>
+          </div>
+          <div class={styles.statCell}>
+            <strong>12sem</strong>
+            <span>resultado visível</span>
+          </div>
         </div>
       </div>
     </div>

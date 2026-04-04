@@ -2,35 +2,61 @@
 
 .section {
   @include section(2rem, 6rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .panel {
-  @include glassCard;
   @include container;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 1.5rem;
-  padding: 2rem;
-  border-radius: var(--radius);
+  gap: 1px;
+  padding: 0;
   background:
-    radial-gradient(circle at top right, rgba(255, 106, 0, 0.18), transparent 32%),
-    rgba(255, 255, 255, 0.04);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08));
 }
 
 .content {
+  padding: 2rem;
+  background: #0c0b09;
+
   h2 {
     margin: 0;
-    font-size: clamp(2rem, 4vw, 3.25rem);
-    line-height: 1.05;
+    font-family: "Bebas Neue", "Space Grotesk", sans-serif;
+    font-size: clamp(3rem, 6vw, 4.6rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
   }
 
   p {
+    margin-top: 1rem;
     color: var(--muted);
+    line-height: 1.8;
   }
 }
 
-.eyebrow {
-  @include eyebrow;
+.metaLine {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.metaBadge {
+  padding: 0.28rem 0.55rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.metaDate {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .actions {
@@ -42,18 +68,24 @@
 
 .button {
   @include buttonBase;
+  min-height: 0;
+  padding: 0.8rem 1.4rem;
+  border-radius: 0;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .buttonPrimary {
   @include buttonPrimary;
+  box-shadow: none;
 }
 
 .form {
-  @include glassCard;
   display: grid;
   gap: 1rem;
   padding: 1.5rem;
-  border-radius: var(--radius);
+  background: #11100e;
 
   label {
     display: grid;
@@ -67,7 +99,7 @@
     min-height: 3.5rem;
     padding: 0 1rem;
     border: 1px solid var(--line);
-    border-radius: 16px;
+    border-radius: 0;
     background: rgba(255, 255, 255, 0.03);
     color: var(--text);
 

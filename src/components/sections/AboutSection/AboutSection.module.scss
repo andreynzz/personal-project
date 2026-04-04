@@ -2,6 +2,7 @@
 
 .section {
   @include section;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .container {
@@ -12,10 +13,38 @@
   align-items: center;
 }
 
+.photoWrap {
+  display: grid;
+  gap: 1rem;
+}
+
+.photoMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.metaBadge {
+  padding: 0.28rem 0.55rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.metaDate {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .photo {
-  @include glassCard;
   overflow: hidden;
   min-height: 38rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
   img {
     width: 100%;
@@ -29,28 +58,33 @@
 .content {
   h2 {
     margin: 0;
-    font-size: clamp(2rem, 4vw, 3.25rem);
-    line-height: 1.05;
+    font-family: "Bebas Neue", "Space Grotesk", sans-serif;
+    font-size: clamp(3rem, 6vw, 4.6rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
   }
 
   p {
+    margin-top: 1rem;
     color: var(--muted);
+    line-height: 1.8;
   }
-}
-
-.eyebrow {
-  @include eyebrow;
 }
 
 .credentials {
   display: grid;
-  gap: 0.9rem;
-  margin-top: 1.5rem;
+  gap: 1px;
+  margin-top: 1.6rem;
+  background: rgba(255, 255, 255, 0.08);
 
   span {
-    padding-bottom: 0.9rem;
-    border-bottom: 1px solid var(--line);
+    padding: 0.95rem 1rem;
+    background: #0c0b09;
     color: #e8ded1;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
 }
 

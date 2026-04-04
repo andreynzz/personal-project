@@ -6,13 +6,17 @@ import styles from "./ServicesSection.module.scss";
 <section class={styles.section}>
   <div class={styles.container}>
     <div class:list={[styles.heading, "reveal"]}>
-      <span class={styles.eyebrow}>Serviços</span>
+      <div class={styles.metaLine}>
+        <span class={styles.metaBadge}>Seção 04</span>
+        <span class={styles.metaDate}>Serviços</span>
+      </div>
       <h2>Formato certo para sua rotina e para o resultado que você quer construir.</h2>
     </div>
 
     <div class={styles.grid}>
-      {services.map((service) => (
+      {services.map((service, index) => (
         <article class:list={[styles.card, "reveal"]}>
+          <span class={styles.index}>0{index + 1}</span>
           <h3>{service.title}</h3>
           <p>{service.text}</p>
           <strong>{service.highlight}</strong>

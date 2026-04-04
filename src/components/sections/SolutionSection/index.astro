@@ -6,7 +6,10 @@ import styles from "./SolutionSection.module.scss";
 <section class={styles.section}>
   <div class={styles.container}>
     <div class:list={[styles.intro, "reveal"]}>
-      <span class={styles.eyebrow}>A solução</span>
+      <div class={styles.metaLine}>
+        <span class={styles.metaBadge}>Seção 03</span>
+        <span class={styles.metaDate}>A solução</span>
+      </div>
       <h2>Método simples, acompanhamento próximo e execução com intensidade.</h2>
       <p>
         O trabalho do Lucas combina treino inteligente, progressão real e suporte
@@ -15,8 +18,9 @@ import styles from "./SolutionSection.module.scss";
     </div>
 
     <div class={styles.list}>
-      {solutions.map((item) => (
+      {solutions.map((item, index) => (
         <article class:list={[styles.card, "reveal"]}>
+          <span class={styles.index}>0{index + 1}</span>
           <h3>{item.title}</h3>
           <p>{item.text}</p>
         </article>

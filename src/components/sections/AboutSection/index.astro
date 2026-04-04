@@ -4,7 +4,11 @@ import styles from "./AboutSection.module.scss";
 
 <section class={styles.section}>
   <div class={styles.container}>
-    <div class="reveal">
+    <div class:list={[styles.photoWrap, "reveal"]}>
+      <div class={styles.photoMeta}>
+        <span class={styles.metaBadge}>Seção 06</span>
+        <span class={styles.metaDate}>Sobre</span>
+      </div>
       <div class={styles.photo}>
         <img
           src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=900&q=80"
@@ -15,7 +19,6 @@ import styles from "./AboutSection.module.scss";
     </div>
 
     <div class:list={[styles.content, "reveal"]}>
-      <span class={styles.eyebrow}>Sobre</span>
       <h2>Treino com energia alta, método claro e atenção individual.</h2>
       <p>
         Lucas Forte é personal trainer especializado em emagrecimento e hipertrofia,

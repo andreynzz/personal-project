@@ -1,0 +1,39 @@
+$bg: #0c0b09;
+$text: #f0eae0;
+$border: rgba(255, 255, 255, 0.08);
+$muted: rgba(240, 234, 224, 0.42);
+$muted-strong: rgba(240, 234, 224, 0.62);
+$muted-soft: rgba(255, 255, 255, 0.3);
+$accent-soft: rgba(255, 77, 0, 0.1);
+$accent-border: rgba(255, 77, 0, 0.5);
+$grid-line: rgba(255, 255, 255, 0.06);
+
+@mixin editorial-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@mixin editorial-meta-line($gap: 0.8rem) {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin editorial-display {
+  font-family: "Bebas Neue", "Space Grotesk", sans-serif;
+  text-transform: uppercase;
+}
+
+@mixin editorial-divider($side: right) {
+  border-#{$side}: 1px solid $border;
+}
+
+@mixin full-bleed {
+  position: absolute;
+  inset: 0;
+}
+
+@function tracking($value) {
+  @return #{$value}em;
+}
