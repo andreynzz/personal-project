@@ -1,0 +1,23 @@
+---
+import { pains } from "../../data/pains";
+import styles from "./ProblemSection.module.scss";
+---
+
+<section class={styles.section}>
+  <div class={styles.container}>
+    <div class:list={[styles.heading, "reveal"]}>
+      <span class={styles.eyebrow}>O problema</span>
+      <h2>Se o plano não encaixa na vida real, você desiste antes do resultado.</h2>
+    </div>
+
+    <div class={styles.grid}>
+      {pains.map((pain) => (
+        <article class:list={[styles.card, "reveal"]}>
+          <span class={styles.number}>{pain.number}</span>
+          <h3>{pain.title}</h3>
+          <p>{pain.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

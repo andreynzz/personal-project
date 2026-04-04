@@ -1,0 +1,26 @@
+---
+import { solutions } from "../../data/solutions";
+import styles from "./SolutionSection.module.scss";
+---
+
+<section class={styles.section}>
+  <div class={styles.container}>
+    <div class:list={[styles.intro, "reveal"]}>
+      <span class={styles.eyebrow}>A solução</span>
+      <h2>Método simples, acompanhamento próximo e execução com intensidade.</h2>
+      <p>
+        O trabalho do Lucas combina treino inteligente, progressão real e suporte
+        contínuo para resolver as dores que travam a maioria das pessoas.
+      </p>
+    </div>
+
+    <div class={styles.list}>
+      {solutions.map((item) => (
+        <article class:list={[styles.card, "reveal"]}>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

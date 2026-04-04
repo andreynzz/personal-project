@@ -1,0 +1,62 @@
+@use "../../styles/shared/mixins" as *;
+
+.section {
+  @include section;
+}
+
+.container {
+  @include container;
+}
+
+.heading {
+  @include sectionHeading;
+}
+
+.eyebrow {
+  @include eyebrow;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  @include glassCard;
+  border-radius: var(--radius);
+  padding: 1.75rem;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  p {
+    color: var(--muted);
+  }
+}
+
+.number {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: #ffae73;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+@media (max-width: 960px) {
+  .section {
+    @include section(4.5rem, 4.5rem);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1.2rem;
+  }
+}

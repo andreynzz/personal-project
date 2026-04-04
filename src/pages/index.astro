@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ScrollReveal from "../components/ScrollReveal";
 import HeroSection from "../components/sections/HeroSection.astro";
+import ProblemSection from "../components/sections/ProblemSection.astro";
+import SolutionSection from "../components/sections/SolutionSection.astro";
 import styles from "./index.module.scss";
 
 const whatsappLink = "https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20meu%20treino%20com%20o%20Lucas%20Forte.";
@@ -12,5 +14,7 @@ const whatsappLink = "https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20com
 
   <main class={styles.pageShell}>
     <HeroSection whatsappLink={whatsappLink} />
+    <ProblemSection />
+    <SolutionSection />
   </main>
 </BaseLayout>
