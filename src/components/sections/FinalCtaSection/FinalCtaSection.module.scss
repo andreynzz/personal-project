@@ -11,8 +11,7 @@
   grid-template-columns: 1.05fr 0.95fr;
   gap: 1px;
   padding: 0;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08));
 }
 
 .content {
@@ -26,12 +25,6 @@
     line-height: 0.95;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-  }
-
-  p {
-    margin-top: 1rem;
-    color: var(--muted);
-    line-height: 1.8;
   }
 }
 
@@ -49,13 +42,6 @@
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.metaDate {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 0.58rem;
-  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -108,11 +94,6 @@
       outline-offset: 2px;
     }
   }
-}
-
-.note {
-  margin: 0;
-  color: var(--muted);
 }
 
 @media (max-width: 960px) {

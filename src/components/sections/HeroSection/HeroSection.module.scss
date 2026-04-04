@@ -92,7 +92,7 @@
 
 .metaLine {
   @include hero.editorial-meta-line;
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
 }
 
 .metaBadge {
@@ -101,13 +101,6 @@
   color: var(--accent);
   font-weight: 700;
   @include hero.editorial-label;
-}
-
-.metaDate {
-  color: hero.$muted-soft;
-  font-size: 0.58rem;
-  letter-spacing: hero.tracking(0.14);
-  text-transform: uppercase;
 }
 
 .headline {
@@ -157,7 +150,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1.7rem;
 }
 
 .button {
@@ -177,18 +170,6 @@
 
 .buttonGhost {
   @include buttonGhost;
-}
-
-.proof {
-  margin: 1.15rem 0 0;
-  color: hero.$muted;
-  font-size: 0.72rem;
-  letter-spacing: hero.tracking(0.08);
-  text-transform: uppercase;
-}
-
-.proof span {
-  color: var(--accent);
 }
 
 .visual {
@@ -240,47 +221,6 @@
     color: var(--accent);
     font-size: 0.56rem;
     @include hero.editorial-label;
-  }
-}
-
-.statsGrid {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: hero.$grid-line;
-}
-
-.statCell {
-  padding: 1rem 1.1rem;
-  background: hero.$bg;
-
-  strong {
-    display: block;
-    color: hero.$text;
-    @include hero.editorial-display;
-    font-size: 2.4rem;
-    line-height: 1;
-  }
-
-  span {
-    display: block;
-    margin-top: 0.28rem;
-    color: hero.$muted;
-    font-size: 0.62rem;
-    letter-spacing: hero.tracking(0.14);
-    text-transform: uppercase;
-  }
-}
-
-.statCellAccent {
-  background: hero.$accent-soft;
-
-  strong {
-    color: var(--accent);
   }
 }
 

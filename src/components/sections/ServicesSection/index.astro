@@ -10,13 +10,8 @@ import styles from "./ServicesSection.module.scss";
     <div class:list={[styles.heading, "reveal"]}>
       <div class={styles.metaLine}>
         <span class={styles.metaBadge}>Seção 04</span>
-        <span class={styles.metaDate}>Serviços</span>
       </div>
       <h2>Formato certo para sua rotina e para o resultado que você quer construir.</h2>
-      <p class={styles.lead}>
-        Escolha a estrutura que mais combina com sua fase. O objetivo é encaixar o método
-        no seu contexto sem perder intensidade, leitura de progresso e consistência.
-      </p>
     </div>
 
     <div class={styles.dossier}>
@@ -24,10 +19,6 @@ import styles from "./ServicesSection.module.scss";
         <article class:list={[styles.card, styles[`card${index + 1}`], "reveal"]}>
           <div class={styles.cardTop}>
             <span class={styles.index}>0{index + 1}</span>
-            <div class={styles.meta}>
-              <span>{service.label}</span>
-              <strong>{service.code}</strong>
-            </div>
           </div>
 
           <div class={styles.content}>
@@ -37,7 +28,6 @@ import styles from "./ServicesSection.module.scss";
 
           <div class={styles.cardBottom}>
             <strong>{service.highlight}</strong>
-            <span>estrutura dedicada</span>
           </div>
         </article>
       ))}

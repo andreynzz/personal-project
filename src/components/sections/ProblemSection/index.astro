@@ -9,20 +9,14 @@ import styles from "./ProblemSection.module.scss";
 
     <div class={styles.layout}>
       <div class:list={[styles.heading, "reveal"]}>
-        <div class={styles.metaLine}>
-          <span class={styles.metaBadge}>Seção 02</span>
-          <span class={styles.metaDate}>O problema</span>
-        </div>
+      <div class={styles.metaLine}>
+        <span class={styles.metaBadge}>Seção 02</span>
+      </div>
         <h2>Se o plano não encaixa na vida real, você desiste antes do resultado.</h2>
         <p class={styles.lead}>
           O problema raramente é falta de esforço. Na maioria das vezes, o que trava
           sua evolução é um método genérico tentando caber numa rotina que já está no limite.
         </p>
-        <div class={styles.sideNote}>
-          <span>Rotina cheia</span>
-          <span>Progresso inconsistente</span>
-          <span>Treino sem direção</span>
-        </div>
       </div>
 
       <ProblemStack client:visible />

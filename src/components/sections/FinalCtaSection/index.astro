@@ -13,13 +13,8 @@ const { whatsappLink } = Astro.props;
     <div class={styles.content}>
       <div class={styles.metaLine}>
         <span class={styles.metaBadge}>Seção 07</span>
-        <span class={styles.metaDate}>Avaliação gratuita</span>
       </div>
       <h2>Agende sua avaliação gratuita e descubra o plano certo para o seu objetivo.</h2>
-      <p>
-        Escolha o melhor canal para falar com o Lucas e dar o primeiro passo com
-        acompanhamento profissional.
-      </p>
 
       <div class={styles.actions}>
         <a class:list={[styles.button, styles.buttonPrimary]} href={whatsappLink} target="_blank" rel="noreferrer">
@@ -41,9 +36,6 @@ const { whatsappLink } = Astro.props;
         Objetivo
         <input type="text" name="goal" placeholder="Emagrecer ou ganhar massa" />
       </label>
-      <p class={styles.note}>
-        Ou preencha o formulário para receber o contato com a avaliação inicial.
-      </p>
       <button class:list={[styles.button, styles.buttonPrimary]} type="submit">Agende sua avaliação gratuita</button>
     </form>
   </div>

@@ -1,38 +1,50 @@
 ---
+import { about } from "../../../data/about";
 import styles from "./AboutSection.module.scss";
 ---
 
 <section class={styles.section}>
   <div class={styles.container}>
-    <div class:list={[styles.photoWrap, "reveal"]}>
-      <div class={styles.photoMeta}>
-        <span class={styles.metaBadge}>Seção 06</span>
-        <span class={styles.metaDate}>Sobre</span>
-      </div>
-      <div class={styles.photo}>
-        <img
-          src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=900&q=80"
-          alt="Lucas Forte em treino funcional"
-          loading="lazy"
-        />
-      </div>
-    </div>
+    <div class={styles.stageWord} aria-hidden="true">profile</div>
 
-    <div class:list={[styles.content, "reveal"]}>
-      <h2>Treino com energia alta, método claro e atenção individual.</h2>
-      <p>
-        Lucas Forte é personal trainer especializado em emagrecimento e hipertrofia,
-        com atendimento presencial e online para quem quer resultado com constância.
-      </p>
-      <p>
-        A proposta é unir intensidade, estratégia e rotina sustentável para transformar
-        treino em hábito e hábito em resultado.
-      </p>
+    <div class={styles.layout}>
+      <div class:list={[styles.profilePanel, "reveal"]}>
+        <div class={styles.photoMeta}>
+          <span class={styles.metaBadge}>Seção 06</span>
+        </div>
 
-      <div class={styles.credentials}>
-        <span>CREF 00/000000-G/SP</span>
-        <span>Especialização fictícia em treinamento funcional e composição corporal</span>
-        <span>Atendimento para iniciantes, intermediários e retorno pós-pausa</span>
+        <div class={styles.photoFrame}>
+          <div class={styles.photo}>
+            <img
+              src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=900&q=80"
+              alt="Lucas Forte em treino funcional"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class:list={[styles.content, "reveal"]}>
+        <div class={styles.headerBlock}>
+          <h2>{about.title}</h2>
+        </div>
+
+        <div class={styles.copy}>
+          {about.description.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+
+        <div class={styles.credentialsPanel}>
+          <div class={styles.credentials}>
+            {about.credentials.map((credential, index) => (
+              <div class={styles.credentialItem}>
+                <span>0{index + 1}</span>
+                <p>{credential}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -2,18 +2,41 @@
 
 .section {
   @include section;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 30%, rgba(255, 106, 0, 0.12), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.01));
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .container {
   @include container;
-  display: grid;
-  grid-template-columns: 0.88fr 1.12fr;
-  gap: 1.5rem;
-  align-items: center;
+  position: relative;
 }
 
-.photoWrap {
+.stageWord {
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  color: rgba(255, 255, 255, 0.03);
+  font-family: "Bebas Neue", "Space Grotesk", sans-serif;
+  font-size: clamp(7rem, 18vw, 14rem);
+  line-height: 0.82;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.profilePanel {
   display: grid;
   gap: 1rem;
 }
@@ -34,55 +57,113 @@
   text-transform: uppercase;
 }
 
-.metaDate {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 0.58rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.photoFrame {
+  position: relative;
+  overflow: hidden;
+  min-height: 40rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(12, 11, 9, 0.95);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 34%);
+    pointer-events: none;
+    z-index: 2;
+  }
 }
 
 .photo {
-  overflow: hidden;
-  min-height: 38rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: absolute;
+  inset: 0;
 
   img {
     width: 100%;
     height: 100%;
-    min-height: 38rem;
     object-fit: cover;
-    filter: grayscale(1);
+    filter: grayscale(1) contrast(1.05);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(255, 106, 0, 0.08), transparent 32%),
+      linear-gradient(0deg, rgba(9, 7, 6, 0.55), transparent 30%);
+    pointer-events: none;
   }
 }
 
 .content {
-  h2 {
-    margin: 0;
-    font-family: "Bebas Neue", "Space Grotesk", sans-serif;
-    font-size: clamp(3rem, 6vw, 4.6rem);
-    line-height: 0.95;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
+  display: grid;
+  gap: 1.2rem;
+  padding-top: 3rem;
+}
+
+.headerBlock {
+  max-width: 38rem;
+}
+
+.headerBlock h2 {
+  margin: 0;
+  font-family: "Bebas Neue", "Space Grotesk", sans-serif;
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.copy {
+  max-width: 34rem;
+  display: grid;
+  gap: 1rem;
 
   p {
-    margin-top: 1rem;
-    color: var(--muted);
-    line-height: 1.8;
+    margin: 0;
+    color: rgba(240, 234, 224, 0.6);
+    line-height: 1.9;
   }
+}
+
+.credentialsPanel {
+  max-width: 38rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
+    rgba(12, 11, 9, 0.96);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.24);
 }
 
 .credentials {
   display: grid;
   gap: 1px;
-  margin-top: 1.6rem;
   background: rgba(255, 255, 255, 0.08);
+}
+
+.credentialItem {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem;
+  background: #0c0b09;
 
   span {
-    padding: 0.95rem 1rem;
-    background: #0c0b09;
+    color: rgba(255, 106, 0, 0.92);
+    font-family: "Bebas Neue", "Space Grotesk", sans-serif;
+    font-size: 2rem;
+    line-height: 0.9;
+  }
+
+  p {
+    margin: 0;
     color: #e8ded1;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
+    line-height: 1.75;
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
@@ -93,12 +174,31 @@
     @include section(4.5rem, 4.5rem);
   }
 
-  .container {
+  .stageWord {
+    top: 4rem;
+    font-size: clamp(5rem, 20vw, 9rem);
+  }
+
+  .layout {
     grid-template-columns: 1fr;
   }
 
-  .photo,
-  .photo img {
+  .content {
+    padding-top: 0;
+  }
+
+  .photoFrame {
     min-height: 28rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .credentialsPanel {
+    padding: 1rem;
+  }
+
+  .credentialItem {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
 }
