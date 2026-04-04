@@ -1,20 +1,12 @@
 ---
 import styles from "./HeroSection.module.scss";
+import { heroTickerItems } from "../../../data/heroTickerItems";
 
 interface Props {
   whatsappLink: string;
 }
 
 const { whatsappLink } = Astro.props;
-
-const heroTickerItems = [
-  "Treinamento personalizado",
-  "Emagrecimento real",
-  "Hipertrofia com método",
-  "Acompanhamento 1:1",
-  "Resultados em 12 semanas",
-  "+120 alunos"
-];
 ---
 
 <section class={styles.section}>
