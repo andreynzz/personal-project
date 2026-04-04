@@ -1,4 +1,4 @@
-@use "../../styles/shared/mixins" as *;
+@use "../../../styles/shared/mixins" as *;
 
 .section {
   @include section;
@@ -24,7 +24,6 @@
 
 .card {
   @include glassCard;
-  min-height: 16rem;
   border-radius: var(--radius);
   padding: 1.75rem;
 
@@ -35,12 +34,15 @@
   p {
     color: var(--muted);
   }
+}
 
-  strong {
-    display: block;
-    margin-top: 1rem;
-    color: #ffd5b4;
-  }
+.number {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: #ffae73;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
 }
 
 @media (max-width: 960px) {

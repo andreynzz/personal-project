@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { heroBadges } from "../data/heroBadges";
+import { heroBadges } from "../../../data/heroBadges";
 import styles from "./HeroBadge.module.scss";
 
 export default function HeroBadge() {
