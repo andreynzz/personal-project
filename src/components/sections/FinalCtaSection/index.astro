@@ -17,7 +17,7 @@ const { whatsappLink } = Astro.props;
       <h2>Agende sua avaliação gratuita e descubra o plano certo para o seu objetivo.</h2>
 
       <div class={styles.actions}>
-        <a class:list={[styles.button, styles.buttonPrimary]} href={whatsappLink} target="_blank" rel="noreferrer">
+        <a class:list={[styles.button, styles.buttonPrimary]} href={whatsappLink} target="_blank" rel="noreferrer" data-magnetic data-cursor="inverse">
           Falar no WhatsApp
         </a>
       </div>
@@ -36,7 +36,7 @@ const { whatsappLink } = Astro.props;
         Objetivo
         <input type="text" name="goal" placeholder="Emagrecer ou ganhar massa" />
       </label>
-      <button class:list={[styles.button, styles.buttonPrimary]} type="submit">Agende sua avaliação gratuita</button>
+      <button class:list={[styles.button, styles.buttonPrimary]} type="submit" data-magnetic data-cursor="inverse">Agende sua avaliação gratuita</button>
     </form>
   </div>
 </section>

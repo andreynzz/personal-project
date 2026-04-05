@@ -1,0 +1,39 @@
+.cursorRoot {
+  @media (pointer: coarse) {
+    display: none;
+  }
+}
+
+.cursorDot,
+.cursorRing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  border-radius: 999px;
+  transform: translate3d(-100px, -100px, 0);
+}
+
+.cursorDot {
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  margin-top: -5px;
+  background: #fff7ef;
+}
+
+.cursorRing {
+  width: 42px;
+  height: 42px;
+  margin-left: -21px;
+  margin-top: -21px;
+  border: 1px solid rgba(255, 247, 239, 0.72);
+  transition:
+    width 180ms ease,
+    height 180ms ease,
+    margin 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}

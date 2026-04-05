@@ -1,6 +1,7 @@
 ---
 import styles from "./HeroSection.module.scss";
 import { heroTickerItems } from "../../../data/heroTickerItems";
+import HeroExperience from "../../ui/HeroExperience/index";
 
 interface Props {
   whatsappLink: string;
@@ -9,9 +10,10 @@ interface Props {
 const { whatsappLink } = Astro.props;
 ---
 
-<section class={styles.section}>
+<section class={styles.section} data-hero-root>
+  <HeroExperience client:load />
   <div class={styles.ticker}>
-    <div class={styles.tickerInner}>
+    <div class={styles.tickerInner} data-hero-ticker>
       {[...heroTickerItems, ...heroTickerItems].map((item) => (
         <span class={styles.tickerItem}>
           {item}
@@ -28,21 +30,21 @@ const { whatsappLink } = Astro.props;
     </div>
 
     <div class={styles.main}>
-      <div class:list={[styles.content, "reveal"]}>
-        <div class={styles.metaLine}>
+      <div class={styles.content} data-hero-content>
+        <div class={styles.metaLine} data-hero-meta>
           <span class={styles.metaBadge}>Presencial & Online</span>
         </div>
 
-        <h1 class={styles.headline}>
-          <span class={styles.headlineOutline}>Transforme</span>
-          <span>
-            <span class={styles.headlineHalf}>seu</span>
+        <h1 class={styles.headline} data-hero-headline>
+          <span class={styles.headlineOutline} data-hero-line>Transforme</span>
+          <span data-hero-line>
+            <span class={styles.headlineHalf}>seu </span>
             <span class={styles.headlineFill}>físico</span>
           </span>
-          <span class={styles.headlineAccent}>de vez.</span>
+          <span class={styles.headlineAccent} data-hero-line>de vez.</span>
         </h1>
 
-        <div class={styles.pullQuote}>
+        <div class={styles.pullQuote} data-hero-copy>
           <p>
             Personal trainer para adultos de 25 a 40 anos que querem emagrecer,
             ganhar massa e finalmente manter resultado com estratégia,
@@ -50,19 +52,23 @@ const { whatsappLink } = Astro.props;
           </p>
         </div>
 
-        <div class={styles.actions}>
-          <a class:list={[styles.button, styles.buttonPrimary]} href={whatsappLink} target="_blank" rel="noreferrer">
+        <div class={styles.actions} data-hero-actions>
+          <a class:list={[styles.button, styles.buttonPrimary]} href={whatsappLink} target="_blank" rel="noreferrer" data-magnetic data-cursor="inverse">
             Quero começar agora
           </a>
-          <a class:list={[styles.button, styles.buttonGhost]} href="#contato">Agendar avaliação</a>
+          <a class:list={[styles.button, styles.buttonGhost]} href="#contato" data-magnetic data-cursor="inverse">Agendar avaliação</a>
         </div>
       </div>
 
     </div>
 
-    <div class:list={[styles.visual, "reveal"]}>
-      <div class={styles.photoCard}>
+    <div class={styles.visual} data-hero-visual>
+      <span class={styles.glowBlobPrimary} data-hero-glow></span>
+      <span class={styles.glowBlobSecondary} data-hero-glow></span>
+      <div class={styles.photoCard} data-hero-photo-card>
+        <span class={styles.photoReveal} data-hero-reveal></span>
         <img
+          data-hero-image
           src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80"
           alt="Personal trainer em pose de treino"
           loading="eager"
