@@ -1,6 +1,7 @@
 ---
 import "../styles/global.scss";
 import CustomCursor from "../components/ui/CustomCursor/index";
+import SmoothScroll from "../components/ui/SmoothScroll/index";
 
 interface Props {
   title?: string;
@@ -22,6 +23,7 @@ const {
     <title>{title}</title>
   </head>
   <body>
+    <SmoothScroll client:load />
     <CustomCursor client:load />
     <slot />
   </body>
