@@ -5,8 +5,13 @@
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.panel {
+.shell {
   @include container;
+  display: grid;
+  gap: 1rem;
+}
+
+.panel {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 1px;
@@ -96,6 +101,73 @@
   }
 }
 
+.footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) auto auto;
+  gap: 1rem;
+  align-items: end;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brandBlock {
+  display: grid;
+  gap: 0.4rem;
+
+  strong {
+    max-width: 24rem;
+    color: #fff1e4;
+    font-family: "Bebas Neue", "Space Grotesk", sans-serif;
+    font-size: clamp(1.4rem, 2vw, 1.9rem);
+    line-height: 0.95;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+}
+
+.brandEyebrow {
+  color: rgba(240, 234, 224, 0.38);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-end;
+
+  a {
+    color: rgba(240, 234, 224, 0.66);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition:
+      color 180ms ease,
+      transform 180ms ease;
+
+    &:hover {
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.footerMeta {
+  display: grid;
+  gap: 0.35rem;
+  justify-items: end;
+
+  span {
+    color: rgba(240, 234, 224, 0.36);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: right;
+  }
+}
+
 @media (max-width: 960px) {
   .section {
     @include section(2rem, 4.5rem);
@@ -103,6 +175,21 @@
 
   .panel {
     grid-template-columns: 1fr;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .footerNav,
+  .footerMeta {
+    justify-content: start;
+    justify-items: start;
+  }
+
+  .footerMeta span {
+    text-align: left;
   }
 }
 
