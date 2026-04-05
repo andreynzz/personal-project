@@ -50,13 +50,6 @@
   text-transform: uppercase;
 }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
 .button {
   @include buttonBase;
   min-height: 0;
