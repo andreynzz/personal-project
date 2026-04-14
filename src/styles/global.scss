@@ -24,12 +24,14 @@
 html {
   scroll-behavior: auto;
   background: #070708;
+  overflow-x: clip;
 }
 
 body {
   position: relative;
   margin: 0;
   min-width: 320px;
+  overflow-x: clip;
   font-family: "Inter", "Segoe UI", sans-serif;
   background:
     radial-gradient(circle at 12% 16%, rgba(255, 106, 0, 0.18), transparent 22%),
@@ -39,6 +41,12 @@ body {
     linear-gradient(180deg, #0d0d0e 0%, #090909 100%);
   color: var(--text);
   background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
 }
 
 body::before,

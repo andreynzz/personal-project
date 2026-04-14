@@ -181,6 +181,7 @@
 
   .layout {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
   .content {
@@ -193,6 +194,18 @@
 }
 
 @media (max-width: 640px) {
+  .layout {
+    gap: 2rem;
+  }
+
+  .photoMeta {
+    flex-wrap: wrap;
+  }
+
+  .photoFrame {
+    min-height: 23rem;
+  }
+
   .credentialsPanel {
     padding: 1rem;
   }

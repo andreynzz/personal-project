@@ -105,8 +105,12 @@
 
   .layout {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }
 
 @media (max-width: 640px) {
+  .layout {
+    gap: 2rem;
+  }
 }

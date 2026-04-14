@@ -155,6 +155,20 @@
   }
 }
 
+@media (max-width: 1140px) {
+  .card {
+    grid-template-columns: 7rem minmax(0, 1fr) 11rem;
+  }
+
+  .card2 {
+    margin-left: 1rem;
+  }
+
+  .card3 {
+    margin-left: 2rem;
+  }
+}
+
 @media (max-width: 960px) {
   .section {
     @include section(4.5rem, 4.5rem);
@@ -183,5 +197,9 @@
 @media (max-width: 640px) {
   .card {
     padding: 1rem;
+  }
+
+  .content h3 {
+    max-width: none;
   }
 }

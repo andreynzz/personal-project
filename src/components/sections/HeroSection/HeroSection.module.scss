@@ -19,7 +19,7 @@
 
 .tickerInner {
   display: inline-flex;
-  min-width: max-content;
+  width: max-content;
   will-change: transform;
 }
 
@@ -269,6 +269,7 @@
 
   .wrapper {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
     flex: initial;
     border-top: none;
   }
@@ -278,28 +279,56 @@
   }
 
   .main {
-    padding: 2rem 1.2rem 0;
+    padding: 2rem 1.25rem 0;
     border-right: none;
   }
 
   .visual {
-    min-height: 30rem;
+    min-height: 28rem;
+    margin-top: 0;
     border-top: 1px solid hero.$border;
   }
 
   .photoCard {
-    min-height: 30rem;
+    min-height: 28rem;
   }
 }
 
 @media (max-width: 640px) {
+  .wrapper {
+    gap: 1rem;
+  }
+
+  .main {
+    padding: 1.5rem 1rem 0.35rem;
+  }
+
   .tickerItem {
     font-size: 0.58rem;
+  }
+
+  .headline {
+    font-size: clamp(3.3rem, 18vw, 4.7rem);
+    line-height: 0.92;
+  }
+
+  .pullQuote {
+    margin-top: 1.3rem;
+    padding-left: 0.8rem;
   }
 
   .metaLine {
     flex-wrap: wrap;
     gap: 0.6rem;
+  }
+
+  .visual,
+  .photoCard {
+    min-height: 22rem;
+  }
+
+  .photoTop {
+    padding: 1rem 1rem 0;
   }
 
   .button {

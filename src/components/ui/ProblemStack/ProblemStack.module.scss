@@ -110,9 +110,7 @@
   .stack {
     padding-top: 1rem;
   }
-}
 
-@media (max-width: 640px) {
   .cardVariant1,
   .cardVariant2,
   .cardVariant3 {
@@ -120,6 +118,12 @@
     margin-left: 0;
   }
 
+  .card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
   .card {
     padding: 1.2rem;
   }

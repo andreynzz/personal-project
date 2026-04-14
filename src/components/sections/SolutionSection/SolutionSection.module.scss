@@ -342,35 +342,16 @@
 
 }
 
-@media (max-width: 1100px) {
-  .atlas {
-    min-height: 58rem;
-  }
-
-  .node1 {
-    left: 0;
-  }
-
-  .node2 {
-    right: 0;
-  }
-}
-
-@media (max-width: 960px) {
-  .section {
-    @include section(4.5rem, 4.5rem);
-  }
-
-  .stageWord {
-    top: 7rem;
-    font-size: clamp(5rem, 24vw, 9rem);
-  }
-
+@media (max-width: 1180px) {
   .atlas {
     min-height: auto;
     display: grid;
     gap: 1rem;
     margin-top: 2rem;
+  }
+
+  .atlas {
+    align-items: stretch;
   }
 
   .ringOuter,
@@ -403,7 +384,22 @@
   }
 }
 
+@media (max-width: 960px) {
+  .section {
+    @include section(4.5rem, 4.5rem);
+  }
+
+  .stageWord {
+    top: 7rem;
+    font-size: clamp(5rem, 24vw, 9rem);
+  }
+}
+
 @media (max-width: 640px) {
+  .metaLine {
+    flex-wrap: wrap;
+  }
+
   .nodeShell {
     padding: 1rem;
   }
