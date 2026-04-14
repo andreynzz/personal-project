@@ -23,6 +23,20 @@ const { whatsappLink } = Astro.props;
     </div>
   </div>
 
+  <header class={styles.headerBar}>
+    <span class={styles.headerBrand}>Lucas Forte Personal</span>
+    <a
+      class={styles.headerContact}
+      href={whatsappLink}
+      target="_blank"
+      rel="noreferrer"
+      data-magnetic
+      data-cursor="inverse"
+    >
+      Entre em contato
+    </a>
+  </header>
+
   <div class={styles.wrapper}>
     <div class={styles.sidebar}>
       <span class={styles.sidebarLabel}>Lucas Forte Personal</span>
@@ -74,11 +88,6 @@ const { whatsappLink } = Astro.props;
           loading="eager"
         />
         <div class={styles.overlay}></div>
-        <div class={styles.photoTop}>
-          <div class={styles.tagBox}>
-            <span>Entre em contato</span>
-          </div>
-        </div>
       </div>
     </div>
   </div>

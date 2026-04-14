@@ -39,6 +39,39 @@
   color: rgba(255, 255, 255, 0.55);
 }
 
+.headerBar {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid hero.$border;
+}
+
+.headerBrand {
+  color: hero.$text;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: hero.tracking(0.2);
+  text-transform: uppercase;
+}
+
+.headerContact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.6rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid hero.$accent-border;
+  color: var(--accent);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: hero.tracking(0.16);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .wrapper {
   @include container;
   flex: 1;
@@ -240,31 +273,13 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
-.photoTop {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 4;
-  display: flex;
-  justify-content: flex-end;
-  padding: 2rem 1.5rem 0;
-}
-
-.tagBox {
-  padding: 0.32rem 0.65rem;
-  border: 1px solid hero.$accent-border;
-
-  span {
-    color: var(--accent);
-    font-size: 0.56rem;
-    @include hero.editorial-label;
-  }
-}
-
 @media (max-width: 960px) {
   .section {
     min-height: auto;
+  }
+
+  .headerBar {
+    padding: 0.9rem 0;
   }
 
   .wrapper {
@@ -295,6 +310,20 @@
 }
 
 @media (max-width: 640px) {
+  .headerBar {
+    padding: 0.85rem 0;
+  }
+
+  .headerBrand {
+    font-size: 0.62rem;
+  }
+
+  .headerContact {
+    min-height: 2.35rem;
+    padding: 0.55rem 0.8rem;
+    font-size: 0.58rem;
+  }
+
   .wrapper {
     gap: 1rem;
   }
@@ -325,10 +354,6 @@
   .visual,
   .photoCard {
     min-height: 22rem;
-  }
-
-  .photoTop {
-    padding: 1rem 1rem 0;
   }
 
   .button {
