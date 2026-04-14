@@ -18,6 +18,13 @@ export function useScrollRevealAnimation({
   start = "top 84%"
 }: UseScrollRevealAnimationOptions = {}) {
   useEffect(() => {
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.innerWidth <= 640
+    ) {
+      return;
+    }
+
     const context = gsap.context(() => {
       const elements = gsap.utils.toArray<HTMLElement>(selector);
 

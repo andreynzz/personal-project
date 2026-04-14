@@ -18,6 +18,14 @@ export default function TestimonialsShowcase() {
       return;
     }
 
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.innerWidth <= 960
+    ) {
+      return;
+    }
+
     const context = gsap.context(() => {
       const cards = gsap.utils.toArray<HTMLElement>("[data-testimonial-card]", root);
       const images = gsap.utils.toArray<HTMLElement>("[data-testimonial-image]", root);
@@ -186,7 +194,16 @@ export default function TestimonialsShowcase() {
           <div className={styles.glow} data-testimonial-glow></div>
           <div className={styles.mediaFrame}>
             <div className={styles.media} data-testimonial-image>
-              <img src={testimonial.image} alt={`Foto de ${testimonial.name}`} loading="lazy" />
+              <img
+                src={testimonial.image}
+                srcSet={`${testimonial.image.replace("w=640", "w=420")} 420w, ${testimonial.image} 640w`}
+                sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1100px) 50vw, 33vw"
+                alt={`Foto de ${testimonial.name}`}
+                width="640"
+                height="640"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <span className={styles.indexTag} data-testimonial-badge>0{index + 1}</span>
           </div>

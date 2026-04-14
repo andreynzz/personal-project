@@ -36,6 +36,14 @@ export function useTiltedStackAnimation({
       return;
     }
 
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.innerWidth <= 960
+    ) {
+      return;
+    }
+
     const context = gsap.context(() => {
       const cards = gsap.utils.toArray<HTMLElement>(cardSelector, rootElement);
       const cleanupFns: Array<() => void> = [];

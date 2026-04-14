@@ -16,9 +16,14 @@ import styles from "./AboutSection.module.scss";
         <div class={styles.photoFrame}>
           <div class={styles.photo}>
             <img
-              src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=900&q=80"
+              src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=720&q=74"
+              srcset="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=480&q=72 480w, https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=720&q=74 720w, https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=900&q=76 900w"
+              sizes="(max-width: 960px) 100vw, 45vw"
               alt="Lucas Forte em treino funcional"
+              width="900"
+              height="1200"
               loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

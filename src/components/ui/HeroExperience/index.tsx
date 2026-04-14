@@ -6,6 +6,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroExperience() {
   useEffect(() => {
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.innerWidth <= 960
+    ) {
+      return;
+    }
+
     const hero = document.querySelector<HTMLElement>("[data-hero-root]") ?? document.querySelector<HTMLElement>("section");
     const headlineLines = document.querySelectorAll<HTMLElement>("[data-hero-line]");
     const heroContent = document.querySelector<HTMLElement>("[data-hero-content]");
