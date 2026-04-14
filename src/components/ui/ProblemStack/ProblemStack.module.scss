@@ -15,7 +15,6 @@
     linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
     #0c0b09;
   will-change: transform;
-  transform-style: preserve-3d;
   transition:
     border-color 220ms ease,
     box-shadow 220ms ease;
@@ -65,8 +64,8 @@
   height: 14rem;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 106, 0, 0.2), transparent 70%);
-  opacity: 0.45;
-  filter: blur(18px);
+  opacity: 0.34;
+  filter: blur(12px);
   pointer-events: none;
   transform: translate(-50%, -50%);
 }
@@ -88,7 +87,6 @@
   position: relative;
   z-index: 1;
   max-width: 28rem;
-  will-change: transform;
 }
 
 .cardVariant1 {

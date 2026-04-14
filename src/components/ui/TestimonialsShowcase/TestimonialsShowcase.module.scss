@@ -17,7 +17,6 @@
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)),
     rgba(12, 12, 13, 0.72);
-  transform-style: preserve-3d;
   will-change: transform;
   transition:
     box-shadow 220ms ease,
@@ -47,7 +46,6 @@
 .mediaFrame {
   position: relative;
   padding: 1rem 1rem 0;
-  transform: translateZ(34px);
 }
 
 .media {
@@ -60,7 +58,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(1) contrast(1.02);
+    filter: grayscale(1) contrast(1);
   }
 }
 
@@ -72,8 +70,8 @@
   height: 16rem;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 106, 0, 0.24), transparent 70%);
-  opacity: 0.5;
-  filter: blur(18px);
+  opacity: 0.38;
+  filter: blur(12px);
   pointer-events: none;
   transform: translate(-50%, -50%);
 }
@@ -101,7 +99,6 @@
 .content {
   position: relative;
   padding: 1.35rem 1.35rem 1.45rem;
-  transform: translateZ(28px);
 }
 
 .content::before {

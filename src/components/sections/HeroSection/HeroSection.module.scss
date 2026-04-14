@@ -226,7 +226,7 @@
     height: 100%;
     object-fit: cover;
     object-position: top center;
-    filter: grayscale(1) contrast(1.2) brightness(0.6);
+    filter: grayscale(1) contrast(1.08) brightness(0.74);
     will-change: transform;
   }
 }
@@ -253,7 +253,7 @@
   position: absolute;
   z-index: 1;
   border-radius: 999px;
-  filter: blur(28px);
+  filter: blur(20px);
   pointer-events: none;
 }
 

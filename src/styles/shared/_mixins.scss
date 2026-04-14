@@ -40,7 +40,7 @@
 @mixin glassCard {
   border: 1px solid var(--line);
   background: var(--panel);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
 }
 
