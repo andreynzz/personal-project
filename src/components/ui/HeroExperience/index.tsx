@@ -60,10 +60,11 @@ export default function HeroExperience() {
       }
 
       if (heroReveal && heroImage) {
-        gsap.set(heroImage, { scale: 1.16 });
-        const tl = gsap.timeline({ delay: 0.18 });
+        gsap.set(heroImage, { scale: 1.06 });
+        gsap.set(heroReveal, { xPercent: 0 });
+        const tl = gsap.timeline();
         tl.fromTo(heroReveal, { xPercent: 0 }, { xPercent: 102, duration: 1.05, ease: "power4.inOut" });
-        tl.to(heroImage, { scale: 1, duration: 1.3, ease: "power3.out" }, 0.08);
+        tl.to(heroImage, { scale: 1, duration: 0.9, ease: "power3.out" }, 0.04);
       }
 
       if (heroContent) {
